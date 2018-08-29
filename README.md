@@ -1,2 +1,2 @@
-# learningc
-learning process for c programme
+# learning C
+learning process for C programme
