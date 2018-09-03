@@ -1,6 +1,8 @@
 #include <stdio.h>
 //#define BASIC
-#define ENUM_SWITCH
+//#define ENUM_SWITCH
+//#define ENUM_CONVER
+#define ENUM_ERGODIC
 
 #ifdef BASIC
 enum DAY
@@ -20,9 +22,53 @@ int main()
 
 #ifdef ENUM_SWITCH
 	enum color {red = 1, green, blue};
-	enum color favorate_color;
+	enum color favorite_color;
 
-	printf("pls input your lov");
+	printf("pls input your favorite color: (1. red, 2. green, 3. blue)");
+    scanf("%d", &favorite_color);
+
+    switch (favorite_color)
+    {
+        case red:
+            printf("The color which you like is red.\n");
+            break;
+        case green:
+            printf("The color which you like is green.\n");
+            break;
+        case blue:
+            printf("The color which you like is blue.\n");
+            break;
+        default:
+            printf("you have not choice favorite color.\n");
+    }
+#endif
+
+#ifdef ENUM_CONVER
+    enum day
+    {
+        saturday,
+        sunday,
+        monday,
+        tuesday,
+        wednesday,
+        thursday,
+        friday
+    } workday;
+
+    int a = 1;
+    enum day weekend;
+    weekend = (enum day) a;
+    printf("weekend: %d\n", weekend);
+#endif
+
+#ifdef ENUM_ERGODIC
+    // 如下为遍历没有规律的枚举
+    enum DAY {MON = 1, TUE, WED, THU = 7, FRI, SAT, SUN};
+    enum DAY day;
+    for (day = MON; day <= SUN; day++)
+    {
+        printf("day=%d\n", day);
+    }
 #endif
 
 	return 0;
