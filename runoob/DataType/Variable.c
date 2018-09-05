@@ -46,5 +46,7 @@ int main()
     // c语言定义的变量必须初始化。
     printf("Value of m is: %d\n", m);
 
+    printf("Hello\tWorld\n\n");
+
     return 0;
 }
