@@ -4,6 +4,17 @@
 //#define BASIC
 #define REALLOC
 
+//mark
+//在GUN标准下void*和char*是一样的如下写法是正确的
+//description = malloc(200 * sizeof(char));
+//在ANSI下不允许这么做必须强制转换
+//description = (char *)malloc(200 * sizeof(char));
+//在ANSI下不允许对void指针进行算法操作
+//在GNU下则是允许这样操作的
+//void * pvoid
+//pvoid++ ANSI错误
+//pvoid_+= 1 ANSI错误
+
 int main()
 {
 #ifdef BASIC
